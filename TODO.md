@@ -1,6 +1,6 @@
 - **TODO**
+
   - [ ] generate styles using style class
-  - [ ] `style` class will give all the styles
   - [ ] `ball` class
     - [ ] ball class will give the next position
     - [ ] ball class will give the current position
@@ -9,6 +9,7 @@
 
 - **DONE**
 
+  - [x] `style` class will give all the styles
   - [x] refactor `generateHtml` with tag class
   - [x] extract `generateHtml` into a new file
   - [x] `tag` class will generate html tags
