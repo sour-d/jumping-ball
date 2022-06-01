@@ -32,10 +32,10 @@ class Tag {
   }
 
   toString() {
-    const contents = this.content.map(content => content).join(' ');
+    const contents = this.content.map(content => content).join('');
 
     if (!this.closingTag) {
-      return `<${this.tag} ${this.attrToString()} />`;
+      return `<${this.tag} ${this.attrToString()}/>`;
     }
 
     return `<${this.tag} ${this.attrToString()}>${contents}</${this.tag}>`;
