@@ -1,8 +1,10 @@
 const assert = require('assert');
 
 class Style {
+  #styles;
+
   constructor() {
-    this.styles = [];
+    this.#styles = [];
   }
 
   equals(otherStyle) {
@@ -15,11 +17,11 @@ class Style {
   }
 
   addProperty(property, value) {
-    this.styles.push({ property, value });
+    this.#styles.push({ property, value });
   }
 
   toString() {
-    const properties = this.styles.map(style => {
+    const properties = this.#styles.map(style => {
       return `${style.property}: ${style.value};`;
     });
 

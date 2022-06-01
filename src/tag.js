@@ -1,11 +1,15 @@
 const assert = require('assert');
 
 class Tag {
+  #tag;
+  #attrs;
+  #content;
+  #closingTag;
   constructor(tag, closingTag = true) {
-    this.tag = tag;
-    this.attrs = [];
-    this.content = [];
-    this.closingTag = closingTag;
+    this.#tag = tag;
+    this.#attrs = [];
+    this.#content = [];
+    this.#closingTag = closingTag;
   }
 
   equals(otherTag) {
@@ -18,27 +22,27 @@ class Tag {
   }
 
   addAttr(attr, value) {
-    this.attrs.push({ attr, value });
+    this.#attrs.push({ attr, value });
   }
 
   addContent(content) {
-    this.content.push(content);
+    this.#content.push(content);
   }
 
   attrToString() {
-    return this.attrs.map(({ attr, value }) => {
+    return this.#attrs.map(({ attr, value }) => {
       return `${attr}="${value}"`;
     }).join(' ');
   }
 
   toString() {
-    const contents = this.content.map(content => content).join('');
+    const contents = this.#content.map(content => content).join('');
 
-    if (!this.closingTag) {
-      return `<${this.tag} ${this.attrToString()}/>`;
+    if (!this.#closingTag) {
+      return `<${this.#tag} ${this.attrToString()}/>`;
     }
 
-    return `<${this.tag} ${this.attrToString()}>${contents}</${this.tag}>`;
+    return `<${this.#tag} ${this.attrToString()}>${contents}</${this.#tag}>`;
   }
 }
 
