@@ -1,4 +1,4 @@
-const { Point, generateHtml } = require('../src/point.js');
+const { Point } = require('../src/point.js');
 const assert = require('assert');
 
 describe('Point', () => {
@@ -11,17 +11,5 @@ describe('Point', () => {
   it('different objects should not match', () => {
     const point1 = new Point(0, 0);
     assert.ok(!point1.equals({ x: 0, y: 0 }));
-  });
-});
-
-describe('generateHtml', () => {
-  it('should return html of the page', () => {
-    const expected = [
-      '<html>',
-      '<head><link rel="stylesheet" href="styles.css"></head>',
-      '<body><div class="ball"><div></body>',
-      '</html>'
-    ];
-    assert.deepStrictEqual(generateHtml(), expected.join(''));
   });
 });
