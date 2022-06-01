@@ -1,7 +1,7 @@
 - **TODO**
 
   - [ ] generate styles using style class
-  - [ ] `ball` class
+  - [x] `ball` class
     - [ ] ball class will give the next position
     - [ ] ball class will give the current position
     - [ ] ball class take random angle after hitting

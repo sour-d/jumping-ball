@@ -5,6 +5,7 @@ class Tag {
   #attrs;
   #content;
   #closingTag;
+
   constructor(tag, closingTag = true) {
     this.#tag = tag;
     this.#attrs = [];
