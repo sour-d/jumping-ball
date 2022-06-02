@@ -1,7 +1,7 @@
 const { Style } = require('../src/style.js');
 const assert = require('assert');
 
-describe('Tag', () => {
+describe('Style', () => {
   it('Same class object should match', () => {
     const style1 = new Style();
     const style2 = new Style();
