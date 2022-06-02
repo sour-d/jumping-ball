@@ -1,5 +1,8 @@
 - **TODO**
 
+  - [ ] create a `path` class which will calculate the path of ball
+  - [ ] point will create a path if we call point behaviour with other point
+  - [ ] implement angle in ball
   - [ ] generate styles using style class
   - [x] `ball` class
     - [ ] ball class will give the next position

@@ -1,13 +1,18 @@
 class Ball {
-  #initalPoint;
+  #initialPoint;
+  #angle;
 
-  constructor(initalPoint) {
-    this.#initalPoint = initalPoint;
+  constructor(initialPoint, angle) {
+    this.#initialPoint = initialPoint;
+    this.#angle = angle;
   }
 
   equals(otherBall) {
-    return this.#initalPoint.equals(otherBall.#initalPoint);
+    return this.#initialPoint.equals(otherBall.#initialPoint)
+      && this.#angle === otherBall.#angle;
   }
+
+
 }
 
 exports.Ball = Ball;
