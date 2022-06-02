@@ -1,7 +1,5 @@
 - **TODO**
 
-  - [ ] create a `path` class which will calculate the path of ball
-  - [ ] point will create a path if we call point behaviour with other point
   - [ ] implement angle in ball
   - [ ] generate styles using style class
   - [x] `ball` class
@@ -12,6 +10,8 @@
 
 - **DONE**
 
+  - [x] create a `path` class which will calculate the path of ball
+  - [x] point will create a path if we call point behaviour with other point
   - [x] `style` class will give all the styles
   - [x] refactor `generateHtml` with tag class
   - [x] extract `generateHtml` into a new file
