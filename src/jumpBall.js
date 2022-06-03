@@ -1,4 +1,6 @@
 const { Tag } = require('./tag.js');
+const { Ball } = require('./ball.js');
+const fs = require('fs');
 
 const generateHead = () => {
   const link = new Tag('link', false);
@@ -29,5 +31,21 @@ const generateHtml = () => {
   return html.toString();
 };
 
+const moveBall = () => {
+  const source = { x: 50, y: 0 };
+  const destination = { x: 50, y: 80 };
+  const ball = new Ball(source, destination);
+
+  const intervalID = setInterval(() => {
+    const nextPosition = ball.moveToNextPoint();
+    fs.writeFileSync('styles.css', nextPosition, 'utf8');
+
+    if (ball.reachedDest()) {
+      clearInterval(intervalID);
+    }
+  }, 50);
+};
+
+moveBall();
 exports.generateHtml = generateHtml;
 

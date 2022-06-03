@@ -21,12 +21,34 @@ class Path {
       this.#point2.y === otherPath.#point2.y;
   }
 
-  calculateY(x) {
+  #calculateY(x) {
     const YDelta = this.#point2.y - this.#point1.y;
     const XDelta = this.#point2.x - this.#point1.x;
     const slope = YDelta / XDelta;
-    const y = (slope * (x - this.#point1.x)) + this.#point1.y;
-    return y;
+    return (slope * (x - this.#point1.x)) + this.#point1.y;
+  }
+
+  #calculateX(y) {
+    const YDelta = this.#point2.y - this.#point1.y;
+    const XDelta = this.#point2.x - this.#point1.x;
+    const slope = YDelta / XDelta;
+    return ((1 / slope) * (y - this.#point1.y)) + this.#point1.x;
+  }
+
+  nextPoint() {
+    const YDelta = this.#point2.y - this.#point1.y;
+    const XDelta = this.#point2.x - this.#point1.x;
+    const slope = YDelta / XDelta;
+    if (slope > 1 && slope != Infinity) {
+      return {
+        x: this.#point1.x + 1,
+        y: this.#calculateY(this.#point1.x + 1)
+      };
+    }
+    return {
+      y: this.#point1.y + 1,
+      x: this.#calculateX(this.#point1.x + 1)
+    };
   }
 }
 

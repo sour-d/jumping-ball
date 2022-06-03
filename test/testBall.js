@@ -14,9 +14,9 @@ describe('Ball', () => {
     assert.ok(!ball1.equals(ball2));
   });
 
-  it('Same class object should match', () => {
-    const ball1 = new Ball({ x: 0, y: 0 }, { x: 5, y: 10 });
-    assert.deepStrictEqual(ball1.nextPoint(), { x: 1, y: 2 });
-    assert.deepStrictEqual(ball1.nextPoint(), { x: 2, y: 4 });
-  });
+  // it('Same class object should match', () => {
+  //   const ball1 = new Ball({ x: 0, y: 0 }, { x: 5, y: 10 });
+  //   assert.deepStrictEqual(ball1.nextPoint(), { x: 1, y: 2 });
+  //   assert.deepStrictEqual(ball1.nextPoint(), { x: 2, y: 4 });
+  // });
 });

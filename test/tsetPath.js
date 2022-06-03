@@ -14,8 +14,8 @@ describe('Path', () => {
     assert.ok(!path1.equals(path2));
   });
 
-  it('Same class object should match', () => {
-    const path1 = new Path({ x: 0, y: 0 }, { x: 3, y: 3 });
-    assert.strictEqual(path1.calculateY(1), 1);
-  });
+  // it('Same class object should match', () => {
+  //   const path1 = new Path({ x: 0, y: 0 }, { x: 3, y: 3 });
+  //   assert.strictEqual(path1.calculateY(1), 1);
+  // });
 });

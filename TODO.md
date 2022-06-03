@@ -1,15 +1,16 @@
 - **TODO**
 
-  - [ ] generate styles using style class
-  - [x] `ball` class
-    - [x] ball class will give the next position
-    - [ ] ball class will give the current position
-    - [ ] ball class take random angle after hitting
-
+  - [ ] next point will be randomly generate after hitting.
 
 - **DONE**
 
-  - [ ] ~implement angle in ball~
+  - [x] `ball` class
+    - [x] ball class will give the next position
+    - [x] ball class will update the current position
+    - [ ] ~~ball class take random angle after hitting~~
+  - [x] generate styles using style class
+  - [x] `ball` class should move the ball and return updated Style
+  - [ ] ~~implement angle in ball~~
   - [x] create a `path` class which will calculate the path of ball
   - [x] point will create a path if we call point behaviour with other point
   - [x] `style` class will give all the styles

@@ -1,5 +1,6 @@
 const assert = require('assert');
 const { Path } = require('./path.js');
+const { Style } = require('./style.js');
 
 class Ball {
   #initialPoint;
@@ -23,14 +24,29 @@ class Ball {
     return true;
   }
 
-  nextPoint() {
-    const path = new Path(this.#initialPoint, this.#destPoint);
-    this.#currentPoint.x += 1;
-    this.#currentPoint.y = path.calculateY(this.#currentPoint.x);
-
-    return { x: this.#currentPoint.x, y: this.#currentPoint.y };
+  moveToNextPoint() {
+    const path = new Path(this.#currentPoint, this.#destPoint);
+    // const nextPoint = path.nextPoint();
+    this.#currentPoint = path.nextPoint();
+    return this.generateStyle();
   }
 
+  reachedDest() {
+    return this.#currentPoint.x === this.#destPoint.x &&
+      this.#currentPoint.y === this.#destPoint.y;
+  }
+
+  generateStyle() {
+    const style = new Style();
+    style.addProperty('top', this.#currentPoint.y + '%');
+    style.addProperty('left', this.#currentPoint.x + '%');
+    style.addProperty('position', 'relative');
+    style.addProperty('height', '100px');
+    style.addProperty('width', '100px');
+    style.addProperty('border-radius', '50%');
+    style.addProperty('border', '1px solid gray');
+    return '.ball {\n' + style.toString() + '}\n';
+  }
 }
 
 exports.Ball = Ball;

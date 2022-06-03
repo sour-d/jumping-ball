@@ -1,7 +1,8 @@
 .ball {
-  height: 100px;
-  width: 100px;
-  background-color: aquamarine;
-  border-radius: 50%;
-  border: 1px solid gray;
-}
+top: 80%;
+left: 50%;
+position: relative;
+height: 100px;
+width: 100px;
+border-radius: 50%;
+border: 1px solid gray;}
