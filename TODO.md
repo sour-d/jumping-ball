@@ -1,9 +1,11 @@
 - **TODO**
 
   - [ ] next point will be randomly generate after hitting.
-
+  - [ ] add events in `eventNotifier`
+  
 - **DONE**
 
+  - [x] add `eventNotifier` class
   - [x] `ball` class
     - [x] ball class will give the next position
     - [x] ball class will update the current position
